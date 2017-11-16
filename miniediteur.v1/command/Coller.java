@@ -1,6 +1,3 @@
-/**
- * 
- */
 package command;
 
 import receiver.MoteurEditeur;

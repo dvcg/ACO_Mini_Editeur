@@ -9,7 +9,7 @@ import receiver.Selection;
  *
  */
 public class Selectionner implements Command {
-	
+
 	MoteurEditeur me;
 	Ihm ihm;
 	

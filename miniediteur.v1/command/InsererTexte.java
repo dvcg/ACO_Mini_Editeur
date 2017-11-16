@@ -1,7 +1,7 @@
 package command;
 
 import invoker.Ihm;
-import receiver.MoteurEdition;
+import receiver.MoteurEditeur;
 
 /**
  * @author Chris_Gea

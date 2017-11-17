@@ -1,10 +1,10 @@
 package receiver;
-
+import observer.Subject;
 /**
  * @author DIANA
  *
  */
-public interface MoteurEditeur {
+public interface MoteurEditeur extends Subject {
 	public Buffer getBuffer();
 	public Selection getSelection();
 	public PressePapier getPressePapier();

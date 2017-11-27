@@ -13,10 +13,10 @@ public class Selection {
 	 * 
 	 *
 	 */
-	public Selection(int debut, int fin) {
+	public Selection() {
 		super();
-		this.debut = debut;
-		this.fin = fin;
+		this.debut=0;
+		this.fin=0;
 	}
 
 	public int getFin() {
@@ -51,7 +51,7 @@ public class Selection {
 	 * @return
 	 */
 	public void setDebut(int debut) {
-		this.debut = debut;
+		this.debut = (debut > 0) ? debut : 0;
 	}
 
 	/**
@@ -60,6 +60,6 @@ public class Selection {
 	 * @return
 	 */
 	public void setFin(int fin) {
-		this.fin = fin;
+		this.fin = (fin > 0) ? fin : 0;
 	}
 }

@@ -21,11 +21,11 @@ public class MoteurEditeur_Impl implements MoteurEditeur {
 	 * @param observateurs
 	 */
 	
-	public MoteurEditeur_Impl(PressePapier pressePapier, Selection selection, Buffer buffer) {
+	public MoteurEditeur_Impl() {
 		super();
-		this.pressePapier = pressePapier;
-		this.selection = selection;
-		this.buffer = buffer;
+		this.pressePapier = new PressePapier();
+		this.selection = new Selection();
+		this.buffer = new Buffer();
 		this.observateurs = new ArrayList<Observer>();
 	}
 
@@ -99,6 +99,7 @@ public class MoteurEditeur_Impl implements MoteurEditeur {
 	 * cas échéant à la position du curseur
 	 */
 	public void insererTexte(String texte) {
+	
 		int debutSelect = selection.getDebut();
 		int finSelect = selection.getFin();
 

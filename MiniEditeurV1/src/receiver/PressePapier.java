@@ -8,9 +8,10 @@ package receiver;
 public class PressePapier {
 private String content;
 
-public PressePapier(String content) {
+public PressePapier() {
 	super();
-	this.content = content;
+	this.content="";
+	
 }
 
 /**

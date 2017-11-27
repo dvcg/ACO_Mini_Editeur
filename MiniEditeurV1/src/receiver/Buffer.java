@@ -1,14 +1,14 @@
 package receiver;
 
 public class Buffer {
-	private StringBuffer contenu;
+	private StringBuffer content;
 	
 	/**
 	 * @param contenu
 	 */
-	public Buffer(StringBuffer contenu) {
+	public Buffer(StringBuffer content) {
 		super();
-		this.contenu = contenu;
+		this.content = content;
 	}
 
 	/**
@@ -17,8 +17,8 @@ public class Buffer {
 	 * @param texte
 	 *            Nouveau contenu du buffer
 	 */
-	public Buffer(String texte) {
-		contenu = new StringBuffer(texte);
+	public Buffer() {
+		content = new StringBuffer();
 	}
 	
 	/**
@@ -27,15 +27,15 @@ public class Buffer {
 	 * @return Le contenu textuel du buffer
 	 */
 	public String getBufferTexte() {
-		return contenu.toString();
+		return content.toString();
 	}
 	/**
 	 * Recupère le contenu du buffer
 	 * 
 	 * @return Le contenu (StringBuffer)
 	 */
-	public StringBuffer getContenu() {
-		return contenu;
+	public StringBuffer getContent() {
+		return content;
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class Buffer {
 	 * @return Un sous ensemble du texte du buffer
 	 */
 	public String recuperer(int indiceDebut, int indiceFin) {
-		return this.contenu.substring(indiceDebut, indiceFin);
+		return this.content.substring(indiceDebut, indiceFin);
 	}
 
 	/**
@@ -55,8 +55,8 @@ public class Buffer {
 	 * @param Texte
 	 *            à insérer dans le buffer
 	 */
-	public void setContenu(StringBuffer sBuffer) {
-		this.contenu = sBuffer;
+	public void setContent(StringBuffer sBuffer) {
+		this.content = sBuffer;
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class Buffer {
 	 * @param indiceFin
 	 */
 	public void supprimer(int indiceDebut, int indiceFin) {
-		this.contenu.delete(indiceDebut, indiceFin);
+		this.content.delete(indiceDebut, indiceFin);
 	}
 
 	/**
@@ -75,7 +75,7 @@ public class Buffer {
 	 * @param caractere
 	 */
 	public void inserer(char caractere) {
-		this.contenu.append(caractere);
+		this.content.append(caractere);
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class Buffer {
 	 * @param caractere
 	 */
 	public void inserer(int indiceDebut, char caractere) {
-		this.contenu.insert(indiceDebut, caractere);
+		this.content.insert(indiceDebut, caractere);
 	}
 
 	/**
@@ -98,7 +98,7 @@ public class Buffer {
 	 *            Texte de remplacement
 	 */
 	public void remplacer(int inDiceDebut, int indiceFin, String texte) {
-		this.contenu.replace(inDiceDebut, indiceFin, texte);
+		this.content.replace(inDiceDebut, indiceFin, texte);
 	}
 
 	

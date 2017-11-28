@@ -25,7 +25,11 @@ public  class EditeurTexte extends JTextArea implements CaretListener, KeyListen
 	public void keyTyped(KeyEvent e) {
 		e.consume();
 		char keyChar = e.getKeyChar();
-		int keyNum = (int) keyChar;		
+		int keyNum = (int) keyChar;	
+		/*if( (keyChar != '\b') && ( keyNum != KeyEvent.VK_CONTROL&&keyNum != KeyEvent.VK_DELETE ) ) {
+			ihm.setInputCharacter(String.valueOf(keyChar));
+			ihm.invoke("insererTexte");
+		}*/
 		if( (keyChar != '\b') && ( keyNum != KeyEvent.VK_DELETE ) ) {
 			ihm.setInputCharacter(String.valueOf(keyChar));
 			ihm.invoke("insererTexte");

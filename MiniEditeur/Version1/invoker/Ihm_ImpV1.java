@@ -52,7 +52,7 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mini Editeur Version1");
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(153, 204, 255));
         setName("FrameV1"); // NOI18N
 
         TextArea.addCaretListener(TextArea);

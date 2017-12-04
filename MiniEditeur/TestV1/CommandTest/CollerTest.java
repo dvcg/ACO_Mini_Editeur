@@ -2,7 +2,15 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class PressePapier_Text {
+/**
+ * 
+ */
+
+/**
+ * @author DIANA
+ *
+ */
+public class CollerTest {
 
 	@Test
 	public void test() {

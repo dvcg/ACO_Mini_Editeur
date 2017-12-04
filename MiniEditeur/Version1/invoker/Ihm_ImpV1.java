@@ -10,10 +10,10 @@ import receiver.Selection;
 
 @SuppressWarnings("serial")
 public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
-	private EditeurTexte TextArea = null;
+	    private EditeurTexte TextArea = null;
 	    private javax.swing.JLabel jLabelPressePapier;
 	    private javax.swing.JLabel jLabelSelection;
-	    private javax.swing.JMenuBar jMenuBar1;
+	    private static javax.swing.JMenuBar jMenuBar1;
 	    private javax.swing.JMenu jMenuColler;
 	    private javax.swing.JMenu jMenuCopier;
 	    private javax.swing.JMenu jMenuCouper;
@@ -42,10 +42,10 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 		pressePapier = "";
 		cmds = new HashMap<String, Command>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TextArea =  new EditeurTexte(this);;
+        TextArea =  new EditeurTexte(this);
         jLabelPressePapier = new javax.swing.JLabel();
         jLabelSelection = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        setjMenuBar1(new javax.swing.JMenuBar());
         jMenuCopier = new javax.swing.JMenu();
         jMenuColler = new javax.swing.JMenu();
         jMenuCouper = new javax.swing.JMenu();
@@ -79,7 +79,7 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 
 			
 		});
-        jMenuBar1.add(jMenuCopier);
+        getjMenuBar1().add(jMenuCopier);
 
         jMenuColler.setText("Coller");
         jMenuColler.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -88,7 +88,7 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 				TextArea.requestFocusInWindow();
             }
         });
-        jMenuBar1.add(jMenuColler);
+        getjMenuBar1().add(jMenuColler);
 
         jMenuCouper.setText("Couper");
         jMenuCouper.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,9 +97,9 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 				TextArea.requestFocusInWindow();
             }
         });
-        jMenuBar1.add(jMenuCouper);
+        getjMenuBar1().add(jMenuCouper);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(getjMenuBar1());
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,12 +241,14 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 	 *            : commande
 	 */
 	public void invoke(String cmd) {
-		if (cmds.containsKey(cmd))
+		if (cmds.containsKey(cmd)){
 			cmds.get(cmd).execute();
-		else
+		
+	}
+		else {
 			throw new IllegalArgumentException(cmd + " n'est pas une commande valide");
 	}
-	
+}
 	/**
 	 * 
 	 * @param subject
@@ -268,6 +270,20 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 		System.out.println(textePp);
 		setSelectionLabelTexte(debutSelec, finSelect);
 		
+	}
+
+	/**
+	 * @return the jMenuBar1
+	 */
+	public static javax.swing.JMenuBar getjMenuBar1() {
+		return jMenuBar1;
+	}
+
+	/**
+	 * @param jMenuBar1 the jMenuBar1 to set
+	 */
+	public static void setjMenuBar1(javax.swing.JMenuBar jMenuBar1) {
+		Ihm_ImpV1.jMenuBar1 = jMenuBar1;
 	}	
 }
 

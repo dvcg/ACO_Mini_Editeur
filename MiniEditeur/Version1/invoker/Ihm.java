@@ -3,15 +3,18 @@
  */
 package invoker;
 
+
+
 /**
  * @author DIANA
- *
+ * Interface Ihm 
  */
 import command.Command;
 import observer.Observer;
 import receiver.Selection;
 
 public interface Ihm extends Observer {
+	
 	public Selection getSelection();
 	public void setSelection(int debut, int fin);
 	public String getInputCharacter();

@@ -1,9 +1,18 @@
+package receiver;
+
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
-public class PressePapierText {
+import receiver.PressePapier;
 
+/**
+ * Classe de test sur le presse papier
+ * @author 
+ */
+public class PressePapierTest {
+	
 	private PressePapier pressePapier;
 
 	@Before
@@ -17,11 +26,11 @@ public class PressePapierText {
 	 */
 	public void testSetTextePP() throws Exception
 	{
-		String Param;
+		String monParam;
 		assertNotNull("Le presse papier est null lors de l'initialisation", pressePapier);
 		
-		Param = "test";		
-		pressePapier.setContenu(Param);
+		monParam = "test";		
+		pressePapier.setContenu(monParam);
 		assertNotNull("Le presse papier reste null après insertion de texte", pressePapier);
 		assertTrue("Le contenu du presse papier est différent de celui du texte inséré", pressePapier.getContenu().toString().equals(monParam));
 	}

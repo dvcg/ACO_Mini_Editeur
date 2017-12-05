@@ -1,19 +1,19 @@
+package V3;
+import invoker.EditeurTexte;
+import invoker.Ihm_ImpV1;
+import invoker.Ihm_impV2;
+
 /**
  * 
  */
-package invoker;
-
-import java.util.HashMap;
-import java.awt.event.ActionEvent;
-import command.Command;
-import receiver.Selection;
 
 /**
  * @author DIANA
  *
  */
-@SuppressWarnings("serial")
-public class Ihm_impV2 extends Ihm_ImpV1{
+public class Ihm_impV3 extends Ihm_ImpV1 {
+	private javax.swing.JMenu jMenuDefaire;
+	private javax.swing.JMenu jMenuDelete;
 	private javax.swing.JMenu jMenuSave;
 	private javax.swing.JMenu jMenuReplay;
 	private javax.swing.JMenu jMenuStop;
@@ -21,7 +21,7 @@ public class Ihm_impV2 extends Ihm_ImpV1{
 	
 	
 	@SuppressWarnings("static-access")
-	public Ihm_impV2() {
+	public Ihm_impV3() {
 		super();
 		 initComponents();
 		
@@ -36,8 +36,10 @@ public class Ihm_impV2 extends Ihm_ImpV1{
 		jMenuSave = new javax.swing.JMenu();
 		jMenuStop = new javax.swing.JMenu();
 		jMenuReplay = new javax.swing.JMenu();
+		jMenuDefaire = new javax.swing.JMenu();
+		jMenuDelete = new javax.swing.JMenu();
 		TextArea =  new EditeurTexte(this);
-		setTitle("Mini Editeur Version2");
+		setTitle("Mini Editeur Version3");
 	    jMenuSave.setText("Save");
 	    jMenuSave.addMouseListener(new java.awt.event.MouseAdapter() {
 	            public void mouseClicked(java.awt.event.MouseEvent evt) { 
@@ -72,16 +74,38 @@ public class Ihm_impV2 extends Ihm_ImpV1{
 	           
 	
 	});
-	    
+	   
+	 jMenuDefaire.setText("Retour");
+	// jMenuDefaire.setEnabled(true);
+	 jMenuDefaire.addMouseListener(new java.awt.event.MouseAdapter() {
+	            public void mouseClicked(java.awt.event.MouseEvent evt) { 
+	            	invoke("RetourArriere");
+	            	// jMenuDefaire.setEnabled(true);
+					TextArea.requestFocusInWindow();
+	            }
+	           
+	
+	});
+	 
+	 jMenuDelete.setText("Delete");
+		// jMenuDefaire.setEnabled(true);
+		 jMenuDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+		            public void mouseClicked(java.awt.event.MouseEvent evt) { 
+		            	invoke("supprimer");
+		            	// jMenuDefaire.setEnabled(true);
+						TextArea.requestFocusInWindow();
+		            }
+		           
+		
+		});
 	    pack();
-	    Ihm_impV2.getjMenuBar1().add(jMenuSave);
-	    Ihm_impV2.getjMenuBar1().add(jMenuStop);
-	    Ihm_impV2.getjMenuBar1().add(jMenuReplay);
+	    Ihm_impV3.getjMenuBar1().add(jMenuSave);
+	    Ihm_impV3.getjMenuBar1().add(jMenuStop);
+	    Ihm_impV3.getjMenuBar1().add(jMenuReplay);
+	    Ihm_impV3.getjMenuBar1().add(jMenuDefaire);
+	    Ihm_impV3.getjMenuBar1().add(jMenuDelete);
 	   
 	    this.setVisible(true);		
 		TextArea.requestFocusInWindow();
 	}
-	
-	
 }
- 

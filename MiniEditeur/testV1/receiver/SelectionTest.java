@@ -1,24 +1,12 @@
+package receiver;
+
 import static org.junit.Assert.*;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
-/**
- * 
- */
-
-/**
- * @author DIANA
- *
- */
 public class SelectionTest {
-
-	/**
-	 * @throws java.lang.Exception
-	 */
 	
-private Selection selection;
+	private Selection selection;
 	
 	@Test
 	public void testSetPosition(){
@@ -65,10 +53,9 @@ private Selection selection;
 		assertEquals("La fin à l'initialisation est différente de 0", 0, selection.getFin());
 		
 		selection.setFin(-5);
-		assertEquals("Cas fin < 0 | Fin différent de 0", 0, selection.getFin());
+		assertEquals("Cas fin < 0 | Fin différentes de 0", 0, selection.getFin());
 		
 		selection.setFin(10);
-		assertEquals("Cas 0 < fin | Fin différen", 10, selection.getFin());
+		assertEquals("Cas 0 < fin | Fin différentes", 10, selection.getFin());
 	}
-
 }

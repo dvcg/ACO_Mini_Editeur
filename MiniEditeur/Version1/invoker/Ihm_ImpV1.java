@@ -164,7 +164,7 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 	/**
 	 * Getter
 	 * 
-	 * @return le caractère entré
+	 * @return le texte entré
 	 */
 	public String getInputCharacter() {
 		return inputCharacter;
@@ -174,7 +174,7 @@ public class Ihm_ImpV1 extends javax.swing.JFrame implements Ihm {
 	 * Setter
 	 * 
 	 * @param inputCharacter
-	 *            : caractère entré
+	 *            : texte entré
 	 */
 	public void setInputCharacter(String inputCharacter) {
 		this.inputCharacter = inputCharacter;
